@@ -6,7 +6,8 @@
 ##
 
 scoreboard players set lb_index index 0
-scoreboard players set lb_max temp_score_display -1
+execute if score lb_temp reverse_order >= dummy dummy_1 run scoreboard players set lb_max temp_score_display 2147483647
+execute unless score lb_temp reverse_order >= dummy dummy_1 run scoreboard players set lb_max temp_score_display -2147483648
 
 # Find max of all temp_score_display values
 

@@ -8,6 +8,12 @@ $data modify storage leaderboard:temp_player score set value $(score)
 $scoreboard players operation lb_max display_$(score)_maxlines = lb_temp display_$(score)_maxlines
 $scoreboard players operation lb_max display_$(score)_maxlines += dummy dummy_1
 
+scoreboard players set lb_temp reverse_order 0
+$execute if entity @e[type=text_display,tag=reverse,tag=display_$(score),nbt={UUID:[I;$(UUID_0),$(UUID_1),$(UUID_2),$(UUID_3)]}] run scoreboard players set lb_temp reverse_order 1
+
+scoreboard players set lb_temp time_mode 0
+$execute if entity @e[type=text_display,tag=time,tag=display_$(score),nbt={UUID:[I;$(UUID_0),$(UUID_1),$(UUID_2),$(UUID_3)]}] run scoreboard players set lb_temp time_mode 1
+
 # Reset output
 
 data remove storage leaderboard:temp_namelist_ordered names
