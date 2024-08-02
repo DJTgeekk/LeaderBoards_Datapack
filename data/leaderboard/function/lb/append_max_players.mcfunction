@@ -24,4 +24,4 @@ execute store result score lb_temp_unorderred namelist_size run data get storage
 execute store result score lb_temp namelist_size run data get storage leaderboard:temp_namelist_ordered names
 
 #$tellraw @a [{"text":"vals2 : "},{"score":{"name":"lb_temp_unorderred","objective":"namelist_size"}},{"text":",,"},{"score":{"name":"lb_temp","objective":"namelist_size"}},{"text":",,"},{"score":{"name":"lb_max","objective":"display_$(score)_maxlines"}}]
-$execute unless score lb_temp_unorderred namelist_size matches 0 run function leaderboard:lb/append_max_players {score:$(score)}
+$execute as @s unless score lb_temp_unorderred namelist_size matches 0 run function leaderboard:lb/append_max_players {score:$(score)}

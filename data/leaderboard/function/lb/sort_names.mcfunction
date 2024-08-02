@@ -28,4 +28,4 @@ execute store result score lb_temp_unorderred namelist_size run data get storage
 execute store result score lb_temp namelist_size run data get storage leaderboard:temp_namelist_ordered names
 scoreboard players set lb_max temp_score_display -1
 scoreboard players set lb_index index 0
-$execute unless score lb_temp_unorderred namelist_size matches 0 run function leaderboard:lb/append_max_players {score:$(score)}
+$execute as @e[type=text_display,tag=display_$(score),nbt={UUID:[I;$(UUID_0),$(UUID_1),$(UUID_2),$(UUID_3)]}] unless score lb_temp_unorderred namelist_size matches 0 run function leaderboard:lb/append_max_players {score:$(score)}

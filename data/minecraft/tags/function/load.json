@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "leaderboard:lb/reset"
+        "leaderboard:commands/reset"
     ]
 }

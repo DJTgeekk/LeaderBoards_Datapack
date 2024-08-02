@@ -22,6 +22,9 @@ scoreboard objectives remove temp_rank
 scoreboard objectives remove temp_lines
 scoreboard objectives remove temp_max
 scoreboard objectives remove time_mode
+scoreboard objectives remove init_state
+#old
+scoreboard objectives remove update_index
 
 scoreboard objectives remove value
 scoreboard objectives remove value_0
@@ -72,5 +75,6 @@ data remove storage leaderboard:update_uuid UUID_3
 
 
 datapack disable "file/LeaderBoards_1.21_v2.0"
+datapack disable "file/LeaderBoards_1.21_v2.0.zip"
 tellraw @s {"text":"Leaderboard Datapack Uninstalled successfully","color":"red"}
 reload

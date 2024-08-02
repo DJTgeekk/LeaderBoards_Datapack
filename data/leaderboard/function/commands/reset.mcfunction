@@ -24,6 +24,7 @@ scoreboard objectives add value_0 dummy
 scoreboard objectives add value_1 dummy
 scoreboard objectives add value_2 dummy
 scoreboard objectives add value_3 dummy
+scoreboard objectives add init_state dummy
 scoreboard players set dummy dummy_1 1
 scoreboard players set dummy dummy_5 5
 scoreboard players set dummy dummy_20 20
@@ -40,6 +41,14 @@ execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary
 execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run data modify storage leaderboard:update_uuid UUID_2 append from entity @s UUID[2]
 execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run data modify storage leaderboard:update_uuid UUID_3 append from entity @s UUID[3]
 
-#execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run function leaderboard:lb/add_max_players_to_old_leaderboards
+# Set new per-leaderboard max_players
+execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run function leaderboard:lb/add_max_players_to_old_leaderboards
 
+kill @e[type=minecraft:text_display,tag=leaderboard,tag=!top]
+
+# remove old max_players scoreboards
+execute if score lb_temp init_state matches 1 run schedule function leaderboard:lb/remove_old_scoreboards 1s
+
+scoreboard players add lb_temp init_state 1
 schedule function leaderboard:lb/update_all_init 1s replace
+tellraw @a ["",{"text":"Leaderboards ","color":"gold"},{"text":"datapack "},{"text":"loaded","color":"green"}]

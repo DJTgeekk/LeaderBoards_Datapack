@@ -1,10 +1,10 @@
 {
   "display": {
       "title": "LeaderBoards",
-      "description": "Leaderboards from scoreboards",
+      "description": "Leaderboards from scoreboards v2.1",
       "icon": {
           "id": "minecraft:player_head",
-          "nbt": {"minecraft:profile": "DJT3"}
+          "components": {"minecraft:profile": "DJT3"}
       },
       "show_toast": false,
       "announce_to_chat": false
