@@ -4,6 +4,8 @@
  #
  # Created by DJT3.
 ##
+execute as @n[type=text_display,tag=top,tag=leaderboard] run function leaderboard:lb/get_score_from_display
+function leaderboard:lb/kill_score_lines with storage leaderboard:update
 $execute as @n[type=text_display,tag=top,tag=leaderboard] run data modify entity @s Tags set value ["leaderboard", "top", "max_players_$(max_players)", "display_$(score)"]
 
 $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(reverse_order) run tag @s add reverse

@@ -23,3 +23,4 @@ execute store result score lb_temp namelist_size run data get storage leaderboar
 function leaderboard:lb/check_equals_max with storage leaderboard:line
 
 $execute as @e[type=text_display,tag=display_$(score),tag=top,nbt={UUID:[I;$(UUID_0),$(UUID_1),$(UUID_2),$(UUID_3)]}] if score lb_temp temp_max matches 1 unless score lb_temp temp_rank > lb_temp namelist_size run function leaderboard:lb/add_line_prep with storage leaderboard:line
+$execute as @e[type=text_display,tag=display_$(score),tag=top,nbt={UUID:[I;$(UUID_0),$(UUID_1),$(UUID_2),$(UUID_3)]}] if score lb_temp temp_max matches 1 if score lb_temp temp_rank > lb_temp namelist_size run function leaderboard:lb/remove_extra_line with storage leaderboard:line

@@ -23,6 +23,7 @@ scoreboard objectives remove temp_lines
 scoreboard objectives remove temp_max
 scoreboard objectives remove time_mode
 scoreboard objectives remove init_state
+scoreboard objectives remove line_killed
 #old
 scoreboard objectives remove update_index
 
