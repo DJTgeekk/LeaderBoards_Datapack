@@ -17,6 +17,5 @@ execute store result storage leaderboard:line sep double 0.30 run scoreboard pla
 execute store result storage leaderboard:line sep_min double 0.29999999999 run scoreboard players get lb_temp temp_rank
 execute store result storage leaderboard:line sep_max double 0.30000000001 run scoreboard players get lb_temp temp_rank
 
-function leaderboard:lb/check_equals_max with storage leaderboard:line
-
+execute as @s run function leaderboard:lb/check_equals_max with storage leaderboard:line
 execute if score lb_temp temp_max matches 1 unless score lb_temp temp_rank > lb_temp namelist_size as @s run function leaderboard:lb/add_line_prep with storage leaderboard:line

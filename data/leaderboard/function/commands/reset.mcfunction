@@ -31,16 +31,11 @@ scoreboard players set dummy dummy_5 5
 scoreboard players set dummy dummy_20 20
 scoreboard players set dummy dummy_60 60
 
-
+#remove old storage
 data remove storage leaderboard:update_uuid UUID_0
 data remove storage leaderboard:update_uuid UUID_1
 data remove storage leaderboard:update_uuid UUID_2
 data remove storage leaderboard:update_uuid UUID_3
-
-execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run data modify storage leaderboard:update_uuid UUID_0 append from entity @s UUID[0]
-execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run data modify storage leaderboard:update_uuid UUID_1 append from entity @s UUID[1]
-execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run data modify storage leaderboard:update_uuid UUID_2 append from entity @s UUID[2]
-execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run data modify storage leaderboard:update_uuid UUID_3 append from entity @s UUID[3]
 
 # Set new per-leaderboard max_players
 execute as @e[type=minecraft:text_display,tag=top,tag=leaderboard,sort=arbitrary] run function leaderboard:lb/add_max_players_to_old_leaderboards

@@ -55,16 +55,13 @@ data remove storage leaderboard:temp_player index
 data remove storage leaderboard:temp_player score
 data remove storage leaderboard:remove score
 data remove storage leaderboard:all_leaderboard_scores score
-data remove storage leaderboard:update_list score
 data remove storage leaderboard:update score
 data remove storage leaderboard:update crop_tag
 data remove storage leaderboard:update tags
-data remove storage leaderboard:update UUID_0
-data remove storage leaderboard:update UUID_1
-data remove storage leaderboard:update UUID_2
-data remove storage leaderboard:update UUID_3
 data remove storage leaderboard:update max_players
 data remove storage leaderboard:update old_max_players
+#remove old storages
+data remove storage leaderboard:update_list score
 data remove storage leaderboard:update_list UUID_0
 data remove storage leaderboard:update_list UUID_1
 data remove storage leaderboard:update_list UUID_2
@@ -73,9 +70,13 @@ data remove storage leaderboard:update_uuid UUID_0
 data remove storage leaderboard:update_uuid UUID_1
 data remove storage leaderboard:update_uuid UUID_2
 data remove storage leaderboard:update_uuid UUID_3
+data remove storage leaderboard:update UUID_0
+data remove storage leaderboard:update UUID_1
+data remove storage leaderboard:update UUID_2
+data remove storage leaderboard:update UUID_3
 
 
-datapack disable "file/LeaderBoards_1.21_v2.0"
-datapack disable "file/LeaderBoards_1.21_v2.0.zip"
+datapack disable "file/LeaderBoards_1.21_v2.2"
+datapack disable "file/LeaderBoards_1.21_v2.2.zip"
 tellraw @s {"text":"Leaderboard Datapack Uninstalled successfully","color":"red"}
 reload

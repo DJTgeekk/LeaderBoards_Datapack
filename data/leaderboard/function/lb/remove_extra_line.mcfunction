@@ -4,7 +4,6 @@
  #
  # Created by DJT3.
 ##
-
 $execute store success score lb_temp line_killed at @s run kill @e[distance=$(sep_min)..$(sep_max),type=text_display,tag=display_$(score),tag=!top,tag=$(lines)]
 
 scoreboard players operation lb_temp temp_lines += dummy dummy_1
@@ -16,6 +15,6 @@ execute store result storage leaderboard:line sep double 0.30 run scoreboard pla
 execute store result storage leaderboard:line sep_min double 0.29999999999 run scoreboard players get lb_temp temp_rank
 execute store result storage leaderboard:line sep_max double 0.30000000001 run scoreboard players get lb_temp temp_rank
 
-function leaderboard:lb/check_equals_max with storage leaderboard:line
+execute as @s run function leaderboard:lb/check_equals_max with storage leaderboard:line
 
-execute if score lb_temp line_killed matches 1 if score lb_temp temp_max matches 1 as @s run function leaderboard:lb/remove_extra_line with storage leaderboard:line
+execute if score lb_temp line_killed matches 1 as @s run function leaderboard:lb/remove_extra_line with storage leaderboard:line
