@@ -5,6 +5,7 @@
  # Created by DJT3.
 ##
 $data modify storage leaderboard:line score set value $(score)
+data modify storage leaderboard:line billboard set from entity @s billboard
 execute as @s run function leaderboard:lb/sort_names with storage leaderboard:update
 
 scoreboard players set lb_temp temp_lines 0

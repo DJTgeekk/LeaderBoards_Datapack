@@ -13,6 +13,7 @@ execute if entity @s[tag=reverse] run scoreboard players set lb_temp reverse_ord
 
 scoreboard players set lb_temp time_mode 0
 execute if entity @s[tag=time] run scoreboard players set lb_temp time_mode 1
+execute if entity @s[tag=full_time] run scoreboard players set lb_temp time_mode 2
 
 # Reset output
 
