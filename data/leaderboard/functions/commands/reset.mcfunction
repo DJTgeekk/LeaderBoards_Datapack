@@ -15,7 +15,9 @@ scoreboard objectives add temp_lines dummy
 scoreboard objectives add temp_max dummy
 scoreboard objectives add namelist_size dummy
 scoreboard objectives add index dummy
+scoreboard objectives add dummy_0 dummy
 scoreboard objectives add dummy_1 dummy
+scoreboard objectives add dummy_2 dummy
 scoreboard objectives add dummy_5 dummy
 scoreboard objectives add dummy_20 dummy
 scoreboard objectives add dummy_60 dummy
@@ -28,7 +30,9 @@ scoreboard objectives add value_2 dummy
 scoreboard objectives add value_3 dummy
 scoreboard objectives add init_state dummy
 scoreboard objectives add line_killed dummy
+scoreboard players set dummy dummy_0 0
 scoreboard players set dummy dummy_1 1
+scoreboard players set dummy dummy_2 2
 scoreboard players set dummy dummy_5 5
 scoreboard players set dummy dummy_20 20
 scoreboard players set dummy dummy_60 60

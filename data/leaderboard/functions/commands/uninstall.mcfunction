@@ -12,7 +12,9 @@ scoreboard objectives remove temp_score_display
 scoreboard objectives remove temp_tag_valid 
 scoreboard objectives remove namelist_size
 scoreboard objectives remove index
+scoreboard objectives remove dummy_0
 scoreboard objectives remove dummy_1
+scoreboard objectives remove dummy_2
 scoreboard objectives remove dummy_5
 scoreboard objectives remove dummy_20
 scoreboard objectives remove dummy_60

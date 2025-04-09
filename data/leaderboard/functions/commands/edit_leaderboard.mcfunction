@@ -12,12 +12,18 @@ $execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] i
 $execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] unless score dummy dummy_1 matches $(reverse_order) run tag @s remove reverse
 
 $execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(time_mode) run tag @s add time
-$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] unless score dummy dummy_1 matches $(time_mode) run tag @s remove time
+$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_2 matches $(time_mode) run tag @s add full_time
+$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_0 matches $(time_mode) run tag @s remove time
+$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_2 matches $(time_mode) run tag @s remove time
+$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(time_mode) run tag @s remove full_time
+$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_0 matches $(time_mode) run tag @s remove full_time
 
 $execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(no_zero) run tag @s add no_zero
 $execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] unless score dummy dummy_1 matches $(no_zero) run tag @s remove no_zero
 
 $execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] run data modify entity @s text set value '"$(display_name)"'
+$execute as @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard] run data modify entity @s billboard set value $(billboard)
+execute as @s run function leaderboard:lb/set_rotation
 
 $execute at @e[limit=1,sort=nearest,type=text_display,tag=top,tag=leaderboard,tag=display_$(score)] run kill @e[tag=display_$(score),type=text_display,tag=!top,tag=leaderboard]
 schedule function leaderboard:lb/update_all_init 1t replace
