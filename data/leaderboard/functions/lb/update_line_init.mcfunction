@@ -13,7 +13,7 @@ scoreboard players operation lb_temp value_1 /= dummy dummy_20
 scoreboard players operation lb_temp value_2 = lb_temp value_1
 scoreboard players operation lb_temp value_1 %= dummy dummy_60
 scoreboard players operation lb_temp value_2 /= dummy dummy_60
-scoreboard players operation lb_temp value_3 = dummy value_2
+scoreboard players operation lb_temp value_3 = lb_temp value_2
 scoreboard players operation lb_temp value_2 %= dummy dummy_60
 scoreboard players operation lb_temp value_3 /= dummy dummy_60
 

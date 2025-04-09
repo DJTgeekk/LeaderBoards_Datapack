@@ -5,6 +5,8 @@
  # Created by DJT3.
 ##
 execute unless entity 00000070-0000-006e-0000-007400000078 run summon item_display 0 -64 0 {Tags:["name"],UUID:[I;112,110,116,120],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0f,0f,0f]}}
+# NEEDED FOR THE ENTITY to be LOADED, if this is an issue for your usage, change these    /\   coordinates to a permanently loaded chuck (spawn) then do /kill 00000070-0000-006e-0000-007400000078 and /reload
+forceload add 0 0
 scoreboard objectives add temp_score_display dummy
 scoreboard objectives add temp_tag_valid dummy
 scoreboard objectives add temp_nb_tags dummy
