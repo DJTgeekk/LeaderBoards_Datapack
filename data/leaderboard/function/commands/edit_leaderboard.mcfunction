@@ -21,7 +21,7 @@ $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_0
 $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(no_zero) run tag @s add no_zero
 $execute as @n[type=text_display,tag=top,tag=leaderboard] unless score dummy dummy_1 matches $(no_zero) run tag @s remove no_zero
 
-$execute as @n[type=text_display,tag=top,tag=leaderboard] run data modify entity @s text set value '"$(display_name)"'
+$execute as @n[type=text_display,tag=top,tag=leaderboard] run data modify entity @s text set value "$(display_name)"
 $execute as @n[type=text_display,tag=top,tag=leaderboard] run data modify entity @s billboard set value $(billboard)
 execute as @s run function leaderboard:lb/set_rotation
 
