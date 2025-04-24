@@ -4,23 +4,11 @@
  #
  # Created by DJT3.
 ##
-$execute store result score lb_temp value run scoreboard players get $(name) $(score)
-scoreboard players operation lb_temp value_0 = lb_temp value
-scoreboard players operation lb_temp value_0 %= dummy dummy_20
-scoreboard players operation lb_temp value_0 *= dummy dummy_5
-scoreboard players operation lb_temp value_1 = lb_temp value
-scoreboard players operation lb_temp value_1 /= dummy dummy_20
-scoreboard players operation lb_temp value_2 = lb_temp value_1
-scoreboard players operation lb_temp value_1 %= dummy dummy_60
-scoreboard players operation lb_temp value_2 /= dummy dummy_60
-scoreboard players operation lb_temp value_3 = lb_temp value_2
-scoreboard players operation lb_temp value_2 %= dummy dummy_60
-scoreboard players operation lb_temp value_3 /= dummy dummy_60
-
-execute store result storage leaderboard:line value_0 int 1 run scoreboard players get lb_temp value_0
-execute store result storage leaderboard:line value_1 int 1 run scoreboard players get lb_temp value_1
-execute store result storage leaderboard:line value_2 int 1 run scoreboard players get lb_temp value_2
-execute store result storage leaderboard:line value_3 int 1 run scoreboard players get lb_temp value_3
+execute as @s run function leaderboard:lb/build_time_values with storage leaderboard:line
+data modify storage leaderboard:line color set value "white"
+$execute if score lb_temp medal_color matches 1 if score dummy dummy_1 matches $(rank) run data modify storage leaderboard:line color set value "#D6AF36"
+$execute if score lb_temp medal_color matches 1 if score dummy dummy_2 matches $(rank) run data modify storage leaderboard:line color set value "#A7A7AD"
+$execute if score lb_temp medal_color matches 1 if score dummy dummy_3 matches $(rank) run data modify storage leaderboard:line color set value "#A77044"
 
 $execute store result storage leaderboard:line value int 1 run scoreboard players get $(name) $(score)
 function leaderboard:lb/update_line with storage leaderboard:line

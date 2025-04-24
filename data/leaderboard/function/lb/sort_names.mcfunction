@@ -15,6 +15,9 @@ scoreboard players set lb_temp time_mode 0
 execute if entity @s[tag=time] run scoreboard players set lb_temp time_mode 1
 execute if entity @s[tag=full_time] run scoreboard players set lb_temp time_mode 2
 
+scoreboard players set lb_temp medal_color 0
+execute if entity @s[tag=medal_color] run scoreboard players set lb_temp medal_color 1
+
 # Reset output
 
 data remove storage leaderboard:temp_namelist_ordered names

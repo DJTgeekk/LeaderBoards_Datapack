@@ -18,6 +18,9 @@ $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_2
 $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(time_mode) run tag @s remove full_time
 $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_0 matches $(time_mode) run tag @s remove full_time
 
+$execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(medal_color) run tag @s add medal_color
+$execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_0 matches $(medal_color) run tag @s remove medal_color
+
 $execute as @n[type=text_display,tag=top,tag=leaderboard] if score dummy dummy_1 matches $(no_zero) run tag @s add no_zero
 $execute as @n[type=text_display,tag=top,tag=leaderboard] unless score dummy dummy_1 matches $(no_zero) run tag @s remove no_zero
 

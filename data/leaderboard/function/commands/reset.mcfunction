@@ -18,11 +18,13 @@ scoreboard objectives add index dummy
 scoreboard objectives add dummy_0 dummy
 scoreboard objectives add dummy_1 dummy
 scoreboard objectives add dummy_2 dummy
+scoreboard objectives add dummy_3 dummy
 scoreboard objectives add dummy_5 dummy
 scoreboard objectives add dummy_20 dummy
 scoreboard objectives add dummy_60 dummy
 scoreboard objectives add reverse_order dummy
 scoreboard objectives add time_mode dummy
+scoreboard objectives add medal_color dummy
 scoreboard objectives add value dummy
 scoreboard objectives add value_0 dummy
 scoreboard objectives add value_1 dummy
@@ -34,6 +36,7 @@ scoreboard objectives add new_max dummy
 scoreboard players set dummy dummy_0 0
 scoreboard players set dummy dummy_1 1
 scoreboard players set dummy dummy_2 2
+scoreboard players set dummy dummy_3 3
 scoreboard players set dummy dummy_5 5
 scoreboard players set dummy dummy_20 20
 scoreboard players set dummy dummy_60 60
