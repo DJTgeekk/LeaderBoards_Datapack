@@ -27,6 +27,5 @@ execute unless score lb_temp namelist_size matches 0 run function leaderboard:lb
 data modify storage leaderboard:temp_namelist_unordered names set from storage leaderboard:namelist names
 execute store result score lb_temp_unorderred namelist_size run data get storage leaderboard:temp_namelist_unordered names
 execute store result score lb_temp namelist_size run data get storage leaderboard:temp_namelist_ordered names
-scoreboard players set lb_max temp_score_display -1
-scoreboard players set lb_index index 0
-$execute as @s unless score lb_temp_unorderred namelist_size matches 0 run function leaderboard:lb/append_max_players {score:$(score)}
+
+$execute as @s unless score lb_temp_unorderred namelist_size matches 0 unless score lb_temp namelist_size matches $(max_players) run function leaderboard:lb/append_max_players with storage leaderboard:update

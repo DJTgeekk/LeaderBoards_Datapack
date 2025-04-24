@@ -30,6 +30,7 @@ scoreboard objectives add value_2 dummy
 scoreboard objectives add value_3 dummy
 scoreboard objectives add init_state dummy
 scoreboard objectives add line_killed dummy
+scoreboard objectives add new_max dummy
 scoreboard players set dummy dummy_0 0
 scoreboard players set dummy dummy_1 1
 scoreboard players set dummy dummy_2 2
