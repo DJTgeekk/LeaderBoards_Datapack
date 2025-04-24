@@ -52,6 +52,7 @@ data remove storage leaderboard:line value_1
 data remove storage leaderboard:line value_2
 data remove storage leaderboard:line value_3
 data remove storage leaderboard:line max_players
+data remove storage leaderboard:line billboard
 data remove storage leaderboard:temp_player player
 data remove storage leaderboard:temp_player index
 data remove storage leaderboard:temp_player score
@@ -78,7 +79,7 @@ data remove storage leaderboard:update UUID_2
 data remove storage leaderboard:update UUID_3
 
 
-datapack disable "file/LeaderBoards_1.21_v2.2"
-datapack disable "file/LeaderBoards_1.21_v2.2.zip"
+datapack disable "file/LeaderBoards_1.21_v2.3"
+datapack disable "file/LeaderBoards_1.21_v2.3.zip"
 tellraw @s {"text":"Leaderboard Datapack Uninstalled successfully","color":"red"}
 reload
