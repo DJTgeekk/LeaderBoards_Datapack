@@ -29,7 +29,8 @@ scoreboard objectives remove medal_color
 scoreboard objectives remove always_show_closest_player
 scoreboard objectives remove init_state
 scoreboard objectives remove line_killed
-scoreboard objectives add new_max dummy
+scoreboard objectives remove new_max
+scoreboard objectives remove forceload_status
 #old
 scoreboard objectives remove update_index
 
