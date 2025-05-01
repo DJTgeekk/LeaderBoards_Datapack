@@ -1,5 +1,5 @@
 ##
- # find_display_tag_init.mcfunction
+ # find_max_tag_init.mcfunction
  # 
  #
  # Created by DJT3.
