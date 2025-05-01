@@ -1,7 +1,7 @@
 {
   "display": {
       "title": "LeaderBoards",
-      "description": "Leaderboards from scoreboards v2.3",
+      "description": "Leaderboards from scoreboards v2.4",
       "icon": {
           "id": "minecraft:player_head",
           "components": {"minecraft:profile": "DJT3"}
