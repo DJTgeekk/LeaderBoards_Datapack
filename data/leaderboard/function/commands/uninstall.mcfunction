@@ -26,6 +26,7 @@ scoreboard objectives remove temp_lines
 scoreboard objectives remove temp_max
 scoreboard objectives remove time_mode
 scoreboard objectives remove medal_color
+scoreboard objectives remove always_show_closest_player
 scoreboard objectives remove init_state
 scoreboard objectives remove line_killed
 scoreboard objectives add new_max dummy
@@ -57,6 +58,8 @@ data remove storage leaderboard:line value_3
 data remove storage leaderboard:line max_players
 data remove storage leaderboard:line billboard
 data remove storage leaderboard:line color
+data remove storage leaderboard:line bold_name
+data remove storage leaderboard:line close_background
 data remove storage leaderboard:temp_player player
 data remove storage leaderboard:temp_player index
 data remove storage leaderboard:temp_player score

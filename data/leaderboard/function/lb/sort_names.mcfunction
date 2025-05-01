@@ -5,8 +5,6 @@
  # Created by DJT3.
 ##
 $data modify storage leaderboard:temp_player score set value $(score)
-$scoreboard players operation lb_max display_$(score)_maxlines = lb_temp display_$(score)_maxlines
-$scoreboard players operation lb_max display_$(score)_maxlines += dummy dummy_1
 
 scoreboard players set lb_temp reverse_order 0
 execute if entity @s[tag=reverse] run scoreboard players set lb_temp reverse_order 1
@@ -17,6 +15,9 @@ execute if entity @s[tag=full_time] run scoreboard players set lb_temp time_mode
 
 scoreboard players set lb_temp medal_color 0
 execute if entity @s[tag=medal_color] run scoreboard players set lb_temp medal_color 1
+
+scoreboard players set lb_temp always_show_closest_player 0
+execute if entity @s[tag=always_show_closest_player] run scoreboard players set lb_temp always_show_closest_player 1
 
 # Reset output
 

@@ -25,6 +25,7 @@ scoreboard objectives add dummy_60 dummy
 scoreboard objectives add reverse_order dummy
 scoreboard objectives add time_mode dummy
 scoreboard objectives add medal_color dummy
+scoreboard objectives add always_show_closest_player dummy
 scoreboard objectives add value dummy
 scoreboard objectives add value_0 dummy
 scoreboard objectives add value_1 dummy
