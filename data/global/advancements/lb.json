@@ -1,10 +1,10 @@
 {
     "display": {
         "title": "LeaderBoards",
-        "description": "Leaderboards from scoreboards",
+        "description": "Leaderboards from scoreboards v2.4.1",
         "icon": {
             "item": "minecraft:player_head",
-            "nbt": "{SkullOwner: 'DJT3'}"
+            "nbt": "{SkullOwner:DJT3}"
         },
         "show_toast": false,
         "announce_to_chat": false
