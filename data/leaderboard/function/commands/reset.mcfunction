@@ -40,7 +40,13 @@ scoreboard players set dummy dummy_5 5
 scoreboard players set dummy dummy_20 20
 scoreboard players set dummy dummy_60 60
 
-#remove old storage
+# init time_mode storage
+data modify storage leaderboard:line value_0 set value 0
+data modify storage leaderboard:line value_1 set value 0
+data modify storage leaderboard:line value_2 set value 0
+data modify storage leaderboard:line value_3 set value 0
+
+# remove old storage
 data remove storage leaderboard:update_uuid UUID_0
 data remove storage leaderboard:update_uuid UUID_1
 data remove storage leaderboard:update_uuid UUID_2
@@ -62,3 +68,4 @@ tellraw @a ["",{"text":"Leaderboards ","color":"gold"},{"text":"datapack "},{"te
 # remove old forceload
 execute store result score lb_temp forceload_status run forceload query 0 0
 execute as @a if score lb_temp forceload_status matches 1 run tellraw @s ["[",{"color":"gold","text":"LeaderBoards"},"]: Detected unneeded forceload, click ",{"bold":true,"click_event":{"action":"run_command","command":"/forceload remove 0 0"},"color":"dark_purple","hover_event":{"action":"show_text","value":[{"text":"Remove Forceload on chunk 0 0","color":"red","bold":true}]},"text":"here","underlined":true}," to remove it"]
+schedule function leaderboard:lb/loop 1t replace
