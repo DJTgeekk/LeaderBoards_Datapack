@@ -4,5 +4,5 @@
  #
  # Created by DJT3.
 ##
-$scoreboard players operation lb_temp value = $(close_player) $(score)
-$scoreboard players operation lb_temp temp_max = $(player) $(score)
+$scoreboard players operation #int.value leaderboard = $(close_player) $(score)
+$scoreboard players operation #int.temp_max_m leaderboard = $(player) $(score)

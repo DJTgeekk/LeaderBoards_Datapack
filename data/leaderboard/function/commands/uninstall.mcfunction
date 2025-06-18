@@ -6,25 +6,7 @@
 ##
 kill @e[type=text_display,tag=leaderboard]
 
-scoreboard objectives remove temp_score_display
-scoreboard objectives remove namelist_size
-scoreboard objectives remove dummy_1
-scoreboard objectives remove dummy_2
-scoreboard objectives remove dummy_3
-scoreboard objectives remove dummy_5
-scoreboard objectives remove dummy_20
-scoreboard objectives remove dummy_60
-scoreboard objectives remove temp_rank
-scoreboard objectives remove temp_lines
-scoreboard objectives remove temp_max
-scoreboard objectives remove line_killed
-scoreboard objectives remove data_d
-
-scoreboard objectives remove value
-scoreboard objectives remove value_0
-scoreboard objectives remove value_1
-scoreboard objectives remove value_2
-scoreboard objectives remove value_3
+scoreboard objectives remove leaderboard
 
 data remove storage leaderboard:temp_namelist names
 data remove storage leaderboard:temp_namelist max_id
