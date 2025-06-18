@@ -4,7 +4,7 @@
  #
  # Created by DJT3.
 ##
-$data modify storage leaderboard:line name set from storage leaderboard:temp_namelist_ordered names[$(lines)]
+$data modify storage leaderboard:line name set from storage leaderboard:temp_namelist names_ordered[$(lines)]
 execute as @s run function leaderboard:lb/add_line with storage leaderboard:line
 execute as @s run function leaderboard:lb/update_line_init with storage leaderboard:line
 
