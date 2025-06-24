@@ -18,4 +18,4 @@ execute as @n[type=text_display,tag=top] store success storage leaderboard:init_
 execute as @n[type=text_display,tag=top] store success storage leaderboard:init_edit time_mode_2_init byte 1 if entity @s[nbt={data:{time_mode:2}}]
 
 
-function leaderboard:lb/data_driven_dialog_edit with storage leaderboard:init_edit
+execute as @s run function leaderboard:lb/data_driven_dialog_edit with storage leaderboard:init_edit
