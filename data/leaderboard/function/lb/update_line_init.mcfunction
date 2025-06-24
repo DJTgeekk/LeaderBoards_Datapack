@@ -4,23 +4,16 @@
  #
  # Created by DJT3.
 ##
-$execute store result score lb_temp value run scoreboard players get $(name) $(score)
-scoreboard players operation lb_temp value_0 = lb_temp value
-scoreboard players operation lb_temp value_0 %= dummy dummy_20
-scoreboard players operation lb_temp value_0 *= dummy dummy_5
-scoreboard players operation lb_temp value_1 = lb_temp value
-scoreboard players operation lb_temp value_1 /= dummy dummy_20
-scoreboard players operation lb_temp value_2 = lb_temp value_1
-scoreboard players operation lb_temp value_1 %= dummy dummy_60
-scoreboard players operation lb_temp value_2 /= dummy dummy_60
-scoreboard players operation lb_temp value_3 = lb_temp value_2
-scoreboard players operation lb_temp value_2 %= dummy dummy_60
-scoreboard players operation lb_temp value_3 /= dummy dummy_60
+execute unless entity @s[nbt={data:{time_mode:0}}] as @s run function leaderboard:lb/build_time_values with storage leaderboard:line
+data modify storage leaderboard:line color set value "white"
+$execute if entity @s[nbt={data:{medal_color:1}}] if score #const.1 leaderboard matches $(rank) run data modify storage leaderboard:line color set value "#D6AF36"
+$execute if entity @s[nbt={data:{medal_color:1}}] if score #const.2 leaderboard matches $(rank) run data modify storage leaderboard:line color set value "#A7A7AD"
+$execute if entity @s[nbt={data:{medal_color:1}}] if score #const.3 leaderboard matches $(rank) run data modify storage leaderboard:line color set value "#A77044"
 
-execute store result storage leaderboard:line value_0 int 1 run scoreboard players get lb_temp value_0
-execute store result storage leaderboard:line value_1 int 1 run scoreboard players get lb_temp value_1
-execute store result storage leaderboard:line value_2 int 1 run scoreboard players get lb_temp value_2
-execute store result storage leaderboard:line value_3 int 1 run scoreboard players get lb_temp value_3
+data modify storage leaderboard:line bold_name set value "false"
+data modify storage leaderboard:line close_background set value 1
+$execute as @s at @s if entity @s[nbt={data:{always_show_closest_player:1}}] if entity @p[distance=..10,name=$(name)] run data modify storage leaderboard:line bold_name set value "true"
+$execute as @s at @s if entity @s[nbt={data:{always_show_closest_player:1}}] if entity @p[distance=..10,name=$(name)] run data modify storage leaderboard:line close_background set value 0
 
 $execute store result storage leaderboard:line value int 1 run scoreboard players get $(name) $(score)
-function leaderboard:lb/update_line with storage leaderboard:line
+execute as @s run function leaderboard:lb/update_line with storage leaderboard:line

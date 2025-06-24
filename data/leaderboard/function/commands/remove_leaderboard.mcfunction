@@ -4,5 +4,4 @@
  #
  # Created by DJT3.
 ##
-$kill @e[type=text_display,limit=1,sort=nearest,tag=display_$(score),tag=top]
-$kill @e[type=text_display,tag=display_$(score),tag=!top]
+execute at @n[type=text_display,tag=top,tag=leaderboard] run kill @e[type=text_display,tag=leaderboard,distance=..0.001]

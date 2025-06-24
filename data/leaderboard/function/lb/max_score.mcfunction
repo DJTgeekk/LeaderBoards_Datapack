@@ -5,5 +5,5 @@
  # Created by DJT3.
 ##
 
-$execute if score lb_temp reverse_order >= dummy dummy_1 run scoreboard players operation lb_max temp_score_display < $(player) temp_score_display
-$execute unless score lb_temp reverse_order >= dummy dummy_1 run scoreboard players operation lb_max temp_score_display > $(player) temp_score_display
+$execute if entity @s[nbt={data:{reverse_order:1}}] run scoreboard players operation #int.temp_score_display leaderboard < $(player) $(score)
+$execute if entity @s[nbt={data:{reverse_order:0}}] run scoreboard players operation #int.temp_score_display leaderboard > $(player) $(score)

@@ -5,28 +5,13 @@
  # Created by DJT3.
 ##
 $data modify storage leaderboard:temp_player score set value $(score)
-$scoreboard players operation lb_max display_$(score)_maxlines = lb_temp display_$(score)_maxlines
-$scoreboard players operation lb_max display_$(score)_maxlines += dummy dummy_1
-
-scoreboard players set lb_temp reverse_order 0
-execute if entity @s[tag=reverse] run scoreboard players set lb_temp reverse_order 1
-
-scoreboard players set lb_temp time_mode 0
-execute if entity @s[tag=time] run scoreboard players set lb_temp time_mode 1
-execute if entity @s[tag=full_time] run scoreboard players set lb_temp time_mode 2
 
 # Reset output
 
-data remove storage leaderboard:temp_namelist_ordered names
-# Copy scoreboard of all players to temp_score_display
+data remove storage leaderboard:temp_namelist names_ordered
 
-data modify storage leaderboard:temp_namelist names set from storage leaderboard:namelist names
-execute store result score lb_temp namelist_size run data get storage leaderboard:temp_namelist names
-execute unless score lb_temp namelist_size matches 0 run function leaderboard:lb/copy_all
+data modify storage leaderboard:temp_namelist names_unordered set from storage leaderboard:namelist names
+execute store result score #int.unorderred_namelist_size leaderboard run data get storage leaderboard:temp_namelist names_unordered
+execute store result score #int.namelist_size leaderboard run data get storage leaderboard:temp_namelist names_ordered
 
-data modify storage leaderboard:temp_namelist_unordered names set from storage leaderboard:namelist names
-execute store result score lb_temp_unorderred namelist_size run data get storage leaderboard:temp_namelist_unordered names
-execute store result score lb_temp namelist_size run data get storage leaderboard:temp_namelist_ordered names
-scoreboard players set lb_max temp_score_display -1
-scoreboard players set lb_index index 0
-$execute as @s unless score lb_temp_unorderred namelist_size matches 0 run function leaderboard:lb/append_max_players {score:$(score)}
+$execute as @s unless score #int.unorderred_namelist_size leaderboard matches 0 unless score #int.namelist_size leaderboard matches $(max_players) run function leaderboard:lb/append_max_players with storage leaderboard:update
