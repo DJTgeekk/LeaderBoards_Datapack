@@ -14,7 +14,5 @@ scoreboard players operation #int.temp_rank leaderboard += #const.1 leaderboard
 execute store result storage leaderboard:line rank int 1 run scoreboard players get #int.temp_rank leaderboard
 execute store result storage leaderboard:line lines int 1 run scoreboard players get #int.temp_lines leaderboard
 execute store result storage leaderboard:line sep double 0.30 run scoreboard players get #int.temp_rank leaderboard
-execute store result storage leaderboard:line sep_min double 0.29999999999 run scoreboard players get #int.temp_rank leaderboard
-execute store result storage leaderboard:line sep_max double 0.30000000001 run scoreboard players get #int.temp_rank leaderboard
 
 execute unless score #int.temp_rank leaderboard > #int.namelist_size leaderboard as @s run function leaderboard:lb/add_line_prep with storage leaderboard:line

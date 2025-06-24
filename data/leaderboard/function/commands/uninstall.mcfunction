@@ -17,8 +17,6 @@ data remove storage leaderboard:line score
 data remove storage leaderboard:line rank
 data remove storage leaderboard:line lines
 data remove storage leaderboard:line sep
-data remove storage leaderboard:line sep_min
-data remove storage leaderboard:line sep_max
 data remove storage leaderboard:line name
 data remove storage leaderboard:line value
 data remove storage leaderboard:line value_0

@@ -4,4 +4,4 @@
  #
  # Created by DJT3.
 ##
-$execute at @s run kill @e[distance=$(sep_min)..$(sep_max),type=text_display,nbt={data:{score:$(score)}},tag=!top,tag=$(lines)]
+$execute at @s run kill @e[type=text_display,distance=..0.001,nbt={transformation:{translation:[0f,-$(sep)f,0f]},data:{score:$(score)}},tag=!top,tag=$(lines)]
