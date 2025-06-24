@@ -9,6 +9,9 @@ data merge storage leaderboard:init_edit {reverse_order:0,no_zero:0,medal_color:
 
 data modify storage leaderboard:init_edit display_name set from entity @s text
 data modify storage leaderboard:init_edit billboard set from entity @s billboard
+data modify storage leaderboard:init_edit see_through set from entity @s see_through
+execute as @s if entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:init_edit bright set value 1
+execute as @s unless entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:init_edit bright set value 0
 
 data modify storage leaderboard:init_edit score set from entity @s data.score
 data modify storage leaderboard:init_edit max_players set from entity @s data.max_players
