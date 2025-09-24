@@ -21,7 +21,7 @@ execute as @s unless score #int.temp_rank leaderboard > #int.namelist_size leade
 
 $execute as @s unless score #int.temp_lines leaderboard matches $(max_players) run function leaderboard:lb/detect_remove_one_line with storage leaderboard:line
 execute if score #int.line_killed leaderboard matches 1 as @s run function leaderboard:lb/remove_extra_line with storage leaderboard:line
-execute if entity @s[nbt={data:{always_show_closest_player:1}}] as @s at @s if entity @p[distance=..10] run function leaderboard:lb/get_player_rank_init
+execute if entity @s[nbt={data:{always_show_closest_player:1}}] as @s at @s if entity @p[distance=..10] run function leaderboard:lb/get_player_rank_init with storage leaderboard:update
 
 $scoreboard players set #int.temp_max_mp leaderboard $(max_players)
 execute if entity @s[nbt={data:{always_show_closest_player:1}}] as @s at @s if score #int.temp_rank leaderboard > #int.temp_max_mp leaderboard if entity @p[distance=..10] run function leaderboard:lb/add_close_player_line with storage leaderboard:line

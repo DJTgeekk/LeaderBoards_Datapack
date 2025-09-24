@@ -12,8 +12,8 @@ $execute if entity @s[nbt={data:{medal_color:1}}] if score #const.3 leaderboard 
 
 data modify storage leaderboard:line bold_name set value "false"
 data modify storage leaderboard:line close_background set value 1
-$execute as @s at @s if entity @s[nbt={data:{always_show_closest_player:1}}] if entity @p[distance=..10,name=$(name)] run data modify storage leaderboard:line bold_name set value "true"
-$execute as @s at @s if entity @s[nbt={data:{always_show_closest_player:1}}] if entity @p[distance=..10,name=$(name)] run data modify storage leaderboard:line close_background set value 0
+$execute as @s at @s if entity @s[nbt={data:{always_show_closest_player:1}}] if entity @p[distance=..10,name='$(name)'] run data modify storage leaderboard:line bold_name set value "true"
+$execute as @s at @s if entity @s[nbt={data:{always_show_closest_player:1}}] if entity @p[distance=..10,name='$(name)'] run data modify storage leaderboard:line close_background set value 0
 
 $execute store result storage leaderboard:line value int 1 run scoreboard players get $(name) $(score)
 execute as @s run function leaderboard:lb/update_line with storage leaderboard:line

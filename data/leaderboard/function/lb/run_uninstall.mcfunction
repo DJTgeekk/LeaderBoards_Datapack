@@ -43,6 +43,7 @@ data remove storage leaderboard:init_edit see_through
 data remove storage leaderboard:init_edit score
 data remove storage leaderboard:init_edit medal_color
 data remove storage leaderboard:init_edit bright
+data remove storage leaderboard:init_edit list
 
 data remove storage leaderboard:init_edit dyn_billboard
 data remove storage leaderboard:init_edit dyn_time_mode
@@ -55,6 +56,7 @@ data remove storage leaderboard:init_edit dyn_see_through
 data remove storage leaderboard:init_edit dyn_always_show_closest_player
 data remove storage leaderboard:init_edit dyn_bright
 data remove storage leaderboard:init_edit dyn_display_name
+data remove storage leaderboard:init_edit dyn_list
 
 data remove storage leaderboard:init_edit vertical_init
 data remove storage leaderboard:init_edit fixed_init
@@ -70,8 +72,9 @@ data remove storage leaderboard:temp_player player
 data remove storage leaderboard:temp_player score
 data remove storage leaderboard:update score
 data remove storage leaderboard:update max_players
+data remove storage leaderboard:update list
 
-datapack disable "file/LeaderBoards_1.21.6_v3.0"
-datapack disable "file/LeaderBoards_1.21.6_v3.0.zip"
+datapack disable "file/LeaderBoards_1.21.6-8_v3.1"
+datapack disable "file/LeaderBoards_1.21.6-8_v3.1.zip"
 tellraw @s {"text":"Leaderboard Datapack Uninstalled successfully","color":"red"}
 reload
