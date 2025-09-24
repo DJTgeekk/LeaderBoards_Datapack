@@ -12,6 +12,7 @@ execute if entity @s[nbt={data:{reverse_order:0}}] run scoreboard players set #i
 
 data modify storage leaderboard:temp_namelist names set from storage leaderboard:temp_namelist names_unordered
 execute store result score #int.namelist_size leaderboard run data get storage leaderboard:temp_namelist names
+data modify storage leaderboard:temp_namelist max_id set value 0
 execute unless score #int.namelist_size leaderboard matches 0 run function leaderboard:lb/find_max
 
 # Find player with index of max value and append it
