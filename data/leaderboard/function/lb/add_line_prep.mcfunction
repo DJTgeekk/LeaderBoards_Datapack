@@ -6,12 +6,8 @@
 ##
 $data modify storage leaderboard:line name set from storage leaderboard:temp_namelist names_ordered[$(lines)]
 
-execute as @s if entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:line bright set value 15
-execute as @s unless entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:line bright set value -1
-execute as @s run data modify storage leaderboard:line see_through set from entity @s see_through
-
-execute as @s run function leaderboard:lb/add_line with storage leaderboard:line
-execute as @s run function leaderboard:lb/update_line_init with storage leaderboard:line
+$execute at @s unless entity @e[type=text_display,distance=..0.001,tag=!top,tag=$(lines)] run function leaderboard:lb/add_line with storage leaderboard:line
+function leaderboard:lb/update_line_init with storage leaderboard:line
 
 scoreboard players operation #int.temp_lines leaderboard += #const.1 leaderboard
 scoreboard players operation #int.temp_rank leaderboard = #int.temp_lines leaderboard

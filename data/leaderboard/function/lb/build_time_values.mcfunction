@@ -6,6 +6,10 @@
 ##
 $execute store result score #int.value leaderboard run scoreboard players get $(name) $(score)
 
+execute unless score #int.value leaderboard matches 0.. run scoreboard players set #bool.value_is_negative leaderboard 1
+execute if score #int.value leaderboard matches 0.. run scoreboard players set #bool.value_is_negative leaderboard 0
+execute unless score #int.value leaderboard matches 0.. run scoreboard players operation #int.value leaderboard *= #const.-1 leaderboard
+
 scoreboard players operation #int.value_0 leaderboard = #int.value leaderboard
 scoreboard players operation #int.value_0 leaderboard %= #const.20 leaderboard
 scoreboard players operation #int.value_0 leaderboard *= #const.5 leaderboard

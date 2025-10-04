@@ -74,7 +74,14 @@ data remove storage leaderboard:update score
 data remove storage leaderboard:update max_players
 data remove storage leaderboard:update list
 
-datapack disable "file/LeaderBoards_1.21.6-8_v3.1"
-datapack disable "file/LeaderBoards_1.21.6-8_v3.1.zip"
+data remove storage leaderboard:leaderboard_nbt data
+data remove storage leaderboard:leaderboard_nbt billboard
+data remove storage leaderboard:leaderboard_nbt see_through
+data remove storage leaderboard:leaderboard_nbt brightness
+
+data remove storage leaderboard:line_nbt text
+
+datapack disable "file/LeaderBoards_1.21.6-8_v3.2"
+datapack disable "file/LeaderBoards_1.21.6-8_v3.2.zip"
 tellraw @s {"text":"Leaderboard Datapack Uninstalled successfully","color":"red"}
 reload

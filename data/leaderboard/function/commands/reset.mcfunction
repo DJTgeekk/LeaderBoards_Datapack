@@ -6,6 +6,7 @@
 ##
 scoreboard objectives add leaderboard dummy
 
+scoreboard players set #const.-1 leaderboard -1
 scoreboard players set #const.1 leaderboard 1
 scoreboard players set #const.2 leaderboard 2
 scoreboard players set #const.3 leaderboard 3
