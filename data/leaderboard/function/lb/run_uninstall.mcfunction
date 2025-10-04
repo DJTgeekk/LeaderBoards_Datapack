@@ -75,9 +75,6 @@ data remove storage leaderboard:update max_players
 data remove storage leaderboard:update list
 
 data remove storage leaderboard:leaderboard_nbt data
-data remove storage leaderboard:leaderboard_nbt billboard
-data remove storage leaderboard:leaderboard_nbt see_through
-data remove storage leaderboard:leaderboard_nbt brightness
 
 data remove storage leaderboard:line_nbt text
 
