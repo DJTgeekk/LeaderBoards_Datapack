@@ -35,5 +35,6 @@ $execute unless data storage leaderboard:leaderboard_nbt {data:{time_mode:0}} un
 $execute unless data storage leaderboard:leaderboard_nbt {data:{time_mode:0}} unless score #int.value_2 leaderboard >= #const.1 leaderboard unless score #int.value_3 leaderboard >= #const.1 leaderboard if score #const.5 leaderboard >= #int.value_0 leaderboard run data modify storage leaderboard:line_nbt text.extra append value {"text":"$(value_1).0$(value_0)s","color":"red"}
 
 data modify entity @s text set from storage leaderboard:line_nbt text
-data modify entity @s background set value -1777069036
+
+$execute unless score #const.1 leaderboard matches $(close_background) run data modify entity @s background set value -1777069036
 $data modify entity @s default_background set value $(close_background)
