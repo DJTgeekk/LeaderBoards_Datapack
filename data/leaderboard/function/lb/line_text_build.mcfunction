@@ -7,6 +7,9 @@
 
 $data modify storage leaderboard:line_nbt text set value {"text":"","extra":[{"text":"#$(rank) ","color":"$(color)"}," ",{"text":"$(name)","bold":$(bold_name)},"  :  "]}
 
+# Player head
+$execute if data storage leaderboard:leaderboard_nbt {data:{show_heads:1}} run data modify storage leaderboard:line_nbt text.extra insert 1 value {"player":{"name":"$(name)"}} 
+
 # Normal score
 $execute if data storage leaderboard:leaderboard_nbt {data:{time_mode:0}} run data modify storage leaderboard:line_nbt text.extra append value {"text":"$(value)","color":"red"}
 
