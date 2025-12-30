@@ -16,6 +16,7 @@ execute store success storage leaderboard:init_edit center_init byte 1 if score 
 execute as @n[type=text_display,tag=top] store success storage leaderboard:init_edit time_mode_0_init byte 1 if entity @s[nbt={data:{time_mode:0}}]
 execute as @n[type=text_display,tag=top] store success storage leaderboard:init_edit time_mode_1_init byte 1 if entity @s[nbt={data:{time_mode:1}}]
 execute as @n[type=text_display,tag=top] store success storage leaderboard:init_edit time_mode_2_init byte 1 if entity @s[nbt={data:{time_mode:2}}]
+execute as @n[type=text_display,tag=top] store success storage leaderboard:init_edit time_mode_3_init byte 1 if entity @s[nbt={data:{time_mode:3}}]
 
 
 function leaderboard:lb/data_driven_dialog_edit with storage leaderboard:init_edit

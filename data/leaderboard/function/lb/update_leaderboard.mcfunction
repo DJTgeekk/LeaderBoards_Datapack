@@ -8,8 +8,8 @@ $data modify storage leaderboard:line score set value $(score)
 $scoreboard players set #int.temp_max_mp leaderboard $(max_players)
 
 data modify storage leaderboard:line billboard set from entity @s billboard
-execute if entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:line bright set value 15
-execute unless entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:line bright set value {}
+execute if entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:line bright set value ",brightness:{block:15,sky:15}"
+execute unless entity @s[nbt={brightness:{block:15}}] run data modify storage leaderboard:line bright set value ""
 data modify storage leaderboard:line see_through set from entity @s see_through
 
 function leaderboard:lb/sort_names with storage leaderboard:update

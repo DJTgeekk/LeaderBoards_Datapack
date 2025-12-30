@@ -68,6 +68,7 @@ data remove storage leaderboard:init_edit center_init
 data remove storage leaderboard:init_edit time_mode_0_init
 data remove storage leaderboard:init_edit time_mode_1_init
 data remove storage leaderboard:init_edit time_mode_2_init
+data remove storage leaderboard:init_edit time_mode_3_init
 
 data remove storage leaderboard:temp_player close_player
 data remove storage leaderboard:temp_player player
@@ -80,7 +81,7 @@ data remove storage leaderboard:leaderboard_nbt data
 
 data remove storage leaderboard:line_nbt text
 
-datapack disable "file/LeaderBoards_1.21.9_v4.0"
-datapack disable "file/LeaderBoards_1.21.9_v4.0.zip"
+datapack disable "file/LeaderBoards_1.21.11_v4.1"
+datapack disable "file/LeaderBoards_1.21.11_v4.1.zip"
 tellraw @s {"text":"Leaderboard Datapack Uninstalled successfully","color":"red"}
 reload
